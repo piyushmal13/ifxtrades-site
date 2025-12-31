@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFXTrades - The Future of Forex Trading</title>
+    <meta name="description" content="IFXTrades offers AI-powered forex signals, automated trading bots, and premium education. Join our exclusive community and experience the future of forex.">
+    <meta name="keywords" content="forex trading, AI trading, forex signals, trading bots, algorithmic trading, forex education, best forex platform, XAUUSD trading, forex community, high-profit forex signals">
+    <link rel="canonical" href="https://www.ifxtrades.com/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #ffc107;  /* Gold */
+            --secondary-color: #000;      /* Black */
+            --text-color: #fff;         /* White */
+            --background-color: #121212;  /* Dark Background */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif, 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--secondary-color);
+            padding: 25px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header .logo {
+            height: 70px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        header .logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            background: linear-gradient(135deg, #ffdb58, #f5b800);
+            color: var(--secondary-color);
+            padding: 120px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('hero-bg.jpg') no-repeat center/cover;  /* Replace with actual image */
+            opacity: 0.1;
+            animation: fadeIn 2s ease-in-out, moveBackground 10s linear infinite;
+        }
+        @keyframes fadeIn {
+          from {opacity: 0;}
+          to {opacity: 0.1;}
+        }
+        @keyframes moveBackground{
+          from {background-position: 0 0;}
+          to {background-position: 100% 100%;}
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-in-out;
+            z-index: 1;
+        }
+         @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+         }
+
+        .hero p {
+            font-size: 1.8em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            animation: fadeInUp 1.2s ease-in-out 0.3s;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 18px 45px;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite alternate, fadeIn 1.5s ease-in-out 0.6s;
+            z-index: 1;
+        }
+        @keyframes pulse {
+          from {transform: scale(1);}
+          to {transform: scale(1.06);}
+        }
+
+        .cta-button:hover {
+            background-color: #333;
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* WhatsApp Popup Styles */
+        .whatsapp-popup {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: var(--text-color);
+            padding: 25px;
+            border-radius: 12px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            animation: slideIn 1s ease-in-out, pulse 2s infinite alternate;
+            display: none; /* Initially hidden, shown by JS */
+        }
+        @keyframes slideIn {
+          from {transform: translateX(100%); opacity: 0;}
+          to {transform: translateX(0); opacity: 1;}
+        }
+
+        .whatsapp-popup h2 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .whatsapp-popup p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .whatsapp-input-container {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .whatsapp-input {
+            padding: 12px;
+            border: none;
+            border-radius: 6px 0 0 6px;
+            font-size: 1.1em;
+            width: 200px;
+            color: #333;
+        }
+
+        .whatsapp-submit {
+            padding: 12px 18px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 0 6px 6px 0;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-submit:hover {
+            background-color: #000;
+        }
+
+        .whatsapp-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.4em;
+            color: var(--text-color);
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .whatsapp-close:hover {
+            opacity: 1;
+        }
+
+        /* Features Section Styles */
+        .features-section {
+            padding: 120px 20px;
+            text-align: center;
+            background-color: #191919;
+        }
+
+        .features-section h2 {
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: slideInLeft 1s ease-in-out;
+        }
+        @keyframes slideInLeft {
+          from{
+            transform: translateX(-100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            margin-top: 60px;
+            animation: fadeInUp 1s ease-in-out 0.5s;
+
+        }
+
+        .feature-card {
+            background-color: #222;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .feature-card h3 {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card p {
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .feature-card ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #ddd;
+        }
+
+        .feature-card ul li::before {
+            content: '✔';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.5em;
+        }
+
+        /* Testimonials Section Styles */
+        .testimonials-section {
+            padding: 120px 20px;
+            text-align: center;
+            background-color: var(--background-color);
+        }
+
+        .testimonials-section h2 {
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: slideInRight 1s ease-in-out;
+        }
+        @keyframes slideInRight{
+          from {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+          to{
+             transform: translateX(0);
+            opacity: 1;
+          }
+        }
+
+        .testimonial-slider-container {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 0 auto;
+            padding-bottom: 60px;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+            padding: 30px;
+            text-align: center;
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .testimonial-card {
+            background-color: #222;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            transition:  transform 0.3s ease;
+        }
+        .testimonial-card:hover{
+           transform: scale(1.04);
+        }
+
+        .testimonial-card p {
+            color: #eee;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.4em;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .slider-control-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #555;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: 2px solid #777;
+        }
+
+        .slider-control-button:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .slider-control-button.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+       .review-section {
+          padding: 120px 20px;
+          text-align: center;
+          background-color: #191919;
+        }
+
+        .review-section h2 {
+          font-size: 3em;
+          margin-bottom: 60px;
+          color: var(--primary-color);
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            margin-top: 60px;
+        }
+        .review-card{
+          background-color: #222;
+          padding: 40px;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+          text-align: left;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+       .review-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .review-card h3 {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .review-card p {
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        /* Call to Action Section Styles */
+        .cta-section {
+            padding: 120px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffc107, #fdd835);
+            color: var(--secondary-color);
+            border-radius: 15px;
+            margin-bottom: 60px;
+        }
+
+        .cta-section h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-section p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--secondary-color);
+            color: #aaa;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 0.9em;
+            border-top: 1px solid #333;
+        }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .cta-button {
+                font-size: 1em;
+                padding: 15px 30px;
+            }
+            .features-grid, .testimonial-grid, .review-grid {
+                grid-template-columns: 1fr;
+            }
+            .feature-card h3, .review-card h3{
+              font-size: 1.5em;
+            }
+            .whatsapp-popup {
+                width: 90%;
+                left: 5%;
+                right: 5%;
+                bottom: 20px;
+            }
+            .whatsapp-input {
+                width: 100%;
+                margin-right: 0;
+                border-radius: 6px;
+                margin-bottom: 10px;
+            }
+            .whatsapp-submit {
+                width: 100%;
+                border-radius: 6px;
+            }
+            .slider-controls {
+              gap: 10px;
+            }
+            .testimonials-section h2, .features-section h2, .review-section h2{
+               font-size: 2.5em;
+            }
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+         @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.06); }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="C:\Users\Piyush\Desktop\ifx\1743840678265.jpg" alt="IFXTrades Logo" class="logo">
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Unlock the Future of Forex Trading</h1>
+            <p>IFXTrades empowers you with cutting-edge AI-driven tools, high-precision signals, and exclusive educational resources.  Experience a new era of trading excellence.</p>
+            <a href="#features" class="cta-button">Explore the Future</a>
+        </div>
+    </section>
+
+    <div class="whatsapp-popup" id="whatsapp-optin">
+        <h2>Get 20% Off Your First Subscription!</h2>
+        <p>Subscribe to our WhatsApp updates for exclusive signals, market insights, and special offers.</p>
+        <div class="whatsapp-input-container">
+            <input type="tel" id="whatsapp-number" class="whatsapp-input" placeholder="Enter your WhatsApp number">
+            <button id="whatsapp-submit" class="whatsapp-submit">Subscribe & Save</button>
+        </div>
+        <p id="whatsapp-error" style="color: red; font-size: 0.9em; display: none; margin-top: 10px;"></p>
+
+        <div class="whatsapp-close" id="whatsapp-close">&times;</div>
+    </div>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2>Key Features & Benefits</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>AI-Powered Signals</h3>
+                    <p>Maximize your trading potential with our high-accuracy signals, generated by advanced AI algorithms.  Get real-time alerts and trade with confidence.</p>
+                    <ul>
+                        <li>Precision-Engineered</li>
+                        <li>Real-Time Delivery</li>
+                        <li>XAUUSD Focus</li>
+                        <li>24/7 Monitoring</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Automated Trading Bots</h3>
+                    <p>Take your hands off the wheel with our intelligent trading bots.  Customize your strategy and let our bots execute trades with optimal efficiency.</p>
+                    <ul>
+                        <li>Customizable Strategies</li>
+                        <li>Backtest Verified</li>
+                        <li>Risk Management</li>
+                        <li>Emotion-Free Trading</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Premium Education</h3>
+                    <p>Master the art of forex trading with our exclusive educational resources. From beginner basics to advanced techniques, we've got you covered.</p>
+                    <ul>
+                        <li>Expert-Led Courses</li>
+                        <li>Comprehensive PDFs</li>
+                        <li>Live Q&A Sessions</li>
+                         <li>Strategy Guides</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>What Our Traders Say</h2>
+            <div class="testimonial-slider-container">
+                <div class="testimonial-slider" id="testimonial-slider">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <p>"IFXTrades' AI signals are a game-changer. I've seen a significant improvement in my trading results.  The bots are incredibly reliable."</p>
+                            <p class="testimonial-author">- John. M, New York</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <p>"The educational resources are top-notch.  I finally understand complex forex concepts, and I'm trading with confidence. Best platform I've used!"</p>
+                            <p class="testimonial-author">- Sarah. L, London</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <p>"The XAUUSD bot is amazing. I'm able to capture consistent profits without spending hours in front of the screen.  Highly recommended for gold traders."</p>
+                            <p class="testimonial-author">- David K., Sydney</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls" id="slider-controls">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="review-section">
+      <div class="container">
+        <h2>Customer Reviews</h2>
+        <div class="review-grid">
+          <div class="review-card">
+            <h3>Excellent Platform</h3>
+            <p>IFXTrades has truly transformed my trading journey. The AI-powered tools are remarkable, and the support is outstanding.</p>
+          </div>
+          <div class="review-card">
+            <h3>Highly Recommend</h3>
+            <p>I've tried many forex platforms, but IFXTrades stands out with its innovative technology and user-friendly interface.</p>
+          </div>
+          <div class="review-card">
+            <h3>Five Stars</h3>
+            <p>From the signals to the bots, IFXTrades provides everything you need to succeed in forex. A top-tier platform!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Dominate the Forex Market?</h2>
+            <p>Join the elite community of traders at IFXTrades and unlock your fullpotential.  Start your journey to financial freedom today.</p>
+            <a href="#whatsapp-optin" class="cta-button">Get Started Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; [Year] IFXTrades. All rights reserved.  | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="#">Risk Disclosure</a>
+        </div>
+    </footer>
+
+    <script>
+        // WhatsApp Popup Logic
+        const whatsappPopup = document.getElementById('whatsapp-optin');
+        const whatsappClose = document.getElementById('whatsapp-close');
+        const whatsappNumberInput = document.getElementById('whatsapp-number');
+        const whatsappSubmit = document.getElementById('whatsapp-submit');
+        const whatsappError = document.getElementById('whatsapp-error');
+
+        // Show the popup after 3 seconds (adjust as needed)
+        setTimeout(() => {
+            whatsappPopup.style.display = 'block';
+        }, 3000);
+
+        whatsappClose.addEventListener('click', () => {
+            whatsappPopup.style.display = 'none';
+        });
+
+        whatsappSubmit.addEventListener('click', () => {
+            const phoneNumber = whatsappNumberInput.value.trim();
+            if (!phoneNumber) {
+                whatsappError.textContent = 'Please enter your WhatsApp number.';
+                whatsappError.style.display = 'block';
+                return;
+            }
+             const phoneRegex = /^\d{10}$/; // Basic 10-digit number validation
+            if (!phoneRegex.test(phoneNumber)) {
+                whatsappError.textContent = 'Please enter a valid 10-digit WhatsApp number.';
+                whatsappError.style.display = 'block';
+                return;
+            }
+
+            // In a real application, you would send this number to your server
+            console.log('WhatsApp number submitted:', phoneNumber);
+            whatsappError.style.display = 'none';
+            whatsappPopup.style.display = 'none';
+            alert('Thank you for subscribing! Check your Whatsapp for updates and your 20% discount.'); // Changed alert
+            // Here, you might also want to redirect the user to a thank-you page or your product page.
+        });
+
+
+
+        // Testimonial Slider Logic
+        const testimonialSlider = document.getElementById('testimonial-slider');
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const sliderControlsContainer = document.getElementById('slider-controls');
+        let currentSlide = 0;
+        let intervalId;
+
+        function createSliderControls() {
+            testimonialSlides.forEach((_, index) => {
+                const button = document.createElement('div');
+                button.classList.add('slider-control-button');
+                button.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateSlider();
+                    resetInterval();
+                });
+                sliderControlsContainer.appendChild(button);
+            });
+            updateSliderControls();
+        }
+
+        function updateSliderControls() {
+            const controlButtons = document.querySelectorAll('.slider-control-button');
+            controlButtons.forEach((button, index) => {
+                button.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function updateSlider() {
+            testimonialSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateSliderControls();
+        }
+
+        function autoSlide() {
+            currentSlide = (currentSlide + 1) % testimonialSlides.length;
+            updateSlider();
+        }
+
+        function resetInterval() {
+            clearInterval(intervalId);
+            intervalId = setInterval(autoSlide, 5000);
+        }
+
+        createSliderControls();
+        intervalId = setInterval(autoSlide, 5000);
+
+        // Mobile menu toggle (if you have one)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');  // Replace with your actual button ID
+        const navLinks = document.getElementById('nav-links');                  // Replace with your actual nav ID
+
+        if (mobileMenuButton && navLinks) {  // Check if elements exist
+            mobileMenuButton.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+    </script>
+</body>
+</html>
