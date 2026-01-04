@@ -181,7 +181,10 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-grid-pattern pt-24 md:pt-0">
+    <section
+  id="home"
+  class="flex flex-col justify-center relative overflow-hidden pt-20 md:pt-0"
+  style="min-height: calc(100vh - 64px);">
         <!-- Ambient Light -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-gold/10 rounded-full blur-[100px] md:blur-[150px] animate-pulse-slow"></div>
 
@@ -749,9 +752,9 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in-up, .gsap-hero').forEach(el => {
-            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-20');
-            observer.observe(el);
-        });
+  el.classList.remove('opacity-0', 'translate-y-20');
+});
+            
 
         // 7. TYPEWRITER (Restored)
         const words = ["HABIT.", "PROFIT.", "SYSTEM.", "POWER."];
