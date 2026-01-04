@@ -96,6 +96,25 @@
         ::-webkit-scrollbar-track { background: #000; }
         ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 3px; }
     </style>
+    <style>
+  /* ===== STABILIZATION LAYER ===== */
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  /* Fix mobile viewport height issues */
+  @media (max-width: 768px) {
+    section {
+      min-height: auto !important;
+    }
+  }
+</style>
 </head>
 <body class="font-body selection:bg-gold selection:text-black">
 
